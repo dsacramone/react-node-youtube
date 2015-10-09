@@ -23,6 +23,6 @@ var userArtistSelectionEmit = require('./server/sockets/emitterArtistSelection.j
   io.sockets.on('connection', function (socket) {
       var reqVid = videoRequest(socket);
       userArtistsEmit(socket)();
-      reqVid();
+      reqVid(config.video.q);
       userArtistSelectionEmit(socket)(reqVid);
   });

@@ -11,8 +11,8 @@ export default class Video extends React.Component {
           return (
 
               <div className="panel panel-warning text-center">
-                  <div className="panel-heading">
-                      <h3>{this.props.currentPlay.title}</h3>
+                  <div className="panel-heading h4">
+                      {this.props.currentPlay.title}
                       { this.props.currentPlay.description
                          ?  <div className="panel panel-default">
                                <div className="panel-body" role="alert"

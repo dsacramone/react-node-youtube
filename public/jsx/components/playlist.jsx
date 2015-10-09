@@ -17,7 +17,8 @@ export default class PlayList extends React.Component {
 
         return (
             <div className="panel panel-warning">
-              <div className="panel-heading">Select Artist Video From Play List Below</div>
+              <div className="panel-heading">
+                <span className="h4">Select Artist Video From Play List Below</span></div>
                 <div className="panel-body">
                   <ul>
                     {videoPlayList}

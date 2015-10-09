@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import _ from 'lodash'
 
 import PlayList from './playlist.jsx';
 import DropDown from './dropdown.jsx';
@@ -17,13 +18,13 @@ export default class App extends React.Component {
             userArtists: [],
             searchSelection: '',
             videos: {items:[]},
+            query: '',
             currentPlay: {id:'', title:'', description:'', image: '', searchSelection: ''}
         }
     }
 
     componentWillMount() {
         socket.on('videoRequest', data => {
-            console.log('FIRED AGAIN')
             this.setVideoStates(JSON.parse(data));
         })
         .on('userArtists', data => {
@@ -53,8 +54,10 @@ export default class App extends React.Component {
 
     setVideoStates(videos) {
         this.setState({
-            videos: videos
+            videos: videos,
+            query: videos.q || ''
         });
+        this.onPlayListChange(_.first(videos.items));
     }
 
     setUserArtistsStates(artists) {

@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
+
 
 export default class PlayListVideo extends React.Component {
     constructor(props) {
@@ -23,13 +25,25 @@ export default class PlayListVideo extends React.Component {
 
     render() {
         var _this = this;
-        //console.log(this.props)
-       // console.log("PLAYLIST VIDEO: ", this.state, this.props)
-        var videoSelected = (this.props.currentPlay.id == this.props.id.videoId) ? 'text-success' : 'text-muted'
+        var bool  = this.props.currentPlay.id == this.props.id.videoId;
+        var videoSelected = classNames({
+              'text-success' : bool,
+              'text-muted' : !bool,
+              'table-bordered': bool
+            });
+
+        var liClass = classNames({
+               'glyphicon': bool,
+               'glyphicon-ok': bool
+             })
+
+        var cursorStyle = {
+              cursor: "pointer",
+        }
 
         return (
             <div className={videoSelected}>
-                <li onClick={_this.setUserPlay.bind(_this, this.props)}>{this.props.snippet.title}</li>
+                <li className={liClass} style={cursorStyle} onClick={_this.setUserPlay.bind(_this, this.props)}> {this.props.snippet.title}</li>
             </div>
         )
     }
