@@ -4,7 +4,7 @@ var config = {
       port: 9002,
       artists: ['Elton John', 'Stevie Wonder', 'Frank Sinatra', 'Louis Armstrong'],
       video: {
-          key: 'AIzaSyDkSikSX-uWbxXyfanxQgsfjoj2pdyqQM0',
+          key: <ADD YOUR GOOGLE API KEY HERE @string>,
           part: "snippet",
           type: "video",
           q: 'Elton John',
