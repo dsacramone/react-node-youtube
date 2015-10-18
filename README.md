@@ -75,16 +75,6 @@ MIT
     the ground. I would have liked to go down the Isomorphic route, and will probably enhance the project to achieve that. I feel 
     that would gain 100+ms faster load speed.
     
-
     
-## Limitations
-    Time. 
-    Also, the task was 'new' to me in that I am usually very particular about requirements. Given the nature of the assignment, I felt
-    as if I had to interpret the intent of the goals. Probably a bad assumption on my part. For instance, should I "plan ahead" for pagination? Should I create & capture 
-    error conditions? etc.... :-) , but over engineering things can open up a huge can of worms.
-    As such, I went with interpreting. It was a bit disconcerting. :-)
-    
-  **note** An appropriate situation is that when I read "...playlist should be rendered server side", I though "oh, ok -
-  on pageload, the playlist needs to be handed off w/o the user searching....". But then I thought "hmmm, or does that mean they 
-  want the page rendered on the server side so the initial load captures the playlist.." (isomorphic way)  :-)
+  **note** A more refined/updated approach would be to take the isomorphic approach.
     
